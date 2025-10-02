@@ -1,3 +1,11 @@
+//toggling button
+const togg=document.getElementById('theme-toggle');
+togg.addEventListener('click',()=>{
+    document.body.classList.toggle('dark-theme');
+})
+
+
+
 
 // Function to update the digital clock
 function updateClock() {

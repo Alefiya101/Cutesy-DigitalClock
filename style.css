@@ -6,12 +6,46 @@ body {
   justify-content: center;
   align-items: center;
   font-family: 'Comic Sans MS', cursive, sans-serif;
-  background: #ffe4e1; /* soft pastel pink */
+  
+  /* Use CSS variables for colors */
+  background: var(--body-bg);
+  color: var(--main-text-color);
+  
+  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 .container {
   text-align: center;
 }
+
+/* --- Color Variables --- */
+/* Your original "Cutesy" theme colors are the defaults */
+:root {
+  --body-bg: #ffe4e1; /* soft pastel pink */
+  --main-text-color: white;
+  --box-bg: #ffd1dc; /* pastel pink */
+  --box-text: #f689c0; /* bright pink numbers */
+  --display-text: whitesmoke;
+  --button-bg: #ffb6c1; /* pastel light pink */
+  --button-hover-bg: #ff69b4; /* brighter pink on hover */
+  --input-border: #ffb6c1;
+  --input-bg: #fff0f5; /* pastel lavender */
+}
+
+/* The new Dark Theme class */
+body.dark-theme {
+  --body-bg: #212121; /* Dark grayish background */
+  --main-text-color: #f0f0f0; /* Light text for readability */
+  --box-bg: #424242; /* Darker box background */
+  --box-text: #f0e68c; /* Yellowish tone */
+  --display-text: #f0e68c; /* Yellowish tone */
+  --button-bg: #555555; /* Darker buttons */
+  --button-hover-bg: #757575; /* Lighter buttons on hover */
+  --input-border: #424242;
+  --input-bg: #333333; /* Darker input background */
+}
+
+/* --- Component Styles using variables --- */
 
 /* Digital Clock */
 .dig-display {
@@ -24,15 +58,15 @@ body {
 .box {
   width: 50px;
   height: 70px;
-  background: #ffd1dc; /* pastel pink */
-  color: #f689c0;       /* bright pink numbers */
+  background: var(--box-bg); 
+  color: var(--box-text);
   font-size: 2em;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
   font-weight: bold;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Stopwatch & Timer */
@@ -43,7 +77,7 @@ body {
 #stopwatch-display, #timer-display {
   font-size: 2em;
   margin: 10px 0;
-  color: whitesmoke; /* changed from reddish/coral to soft pastel mint */
+  color: var(--display-text); 
   font-weight: bold;
 }
 
@@ -58,8 +92,8 @@ body {
 button {
   padding: 8px 18px;
   border: none;
-  background-color: #ffb6c1; /* pastel light pink */
-  color: #fff;
+  background-color: var(--button-bg); 
+  color: var(--main-text-color);
   font-weight: bold;
   border-radius: 12px;
   cursor: pointer;
@@ -67,9 +101,14 @@ button {
 }
 
 button:hover {
-  background-color: #ff69b4; /* brighter pink on hover */
+  background-color: var(--button-hover-bg); 
 }
+#theme-toggle{
+  position: fixed;
+  top:20px;
+  right:20px;
 
+}
 /* Input */
 input#timer-input {
   padding: 5px;
@@ -77,6 +116,6 @@ input#timer-input {
   font-size: 1em;
   text-align: center;
   border-radius: 12px;
-  border: 1px solid #ffb6c1;
-  background-color: #fff0f5; /* pastel lavender */
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
 }
