@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock & Stopwatch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Digital Clock -->
+    <div class="dig-display">
+      <div class="box first-hour">0</div>
+      <div class="box sec-hour">0</div>
+      <div class="box">:</div>
+      <div class="box first-min">0</div>
+      <div class="box sec-min">0</div>
+      <div class="box">:</div>
+      <div class="box first-sec">0</div>
+      <div class="box sec-sec">0</div>
+    </div>
+
+    <!-- Stopwatch -->
+    <div class="stopwatch">
+      <p id="stopwatch-display">00:00:00</p>
+      <div class="buttons">
+        <button id="start-sw">Start</button>
+        <button id="stop-sw">Stop</button>
+        <button id="reset-sw">Reset</button>
+      </div>
+    </div>
+
+    <!-- Timer -->
+    <div class="timer">
+      <input type="number" id="timer-input" placeholder="Enter seconds">
+      <p id="timer-display">00:00</p>
+      <div class="buttons">
+        <button id="start-timer">Start</button>
+        <button id="reset-timer">Reset</button>
+      </div>
+    </div>
+
+  </div>
+  <script src="logic.js"></script>
+
+</body>
+</html>
